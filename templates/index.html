@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+HAAA
+{% block content %}
+  {% if not players %}
+  <h2>Please add a player to view!</h2>
+  {% endif %}
+  <form action="{{ url_for('index') }}" method="POST">
+      {{ form.name.label() }}{{ form.name() }}<br>
+      {{ form.rank.label() }}{{ form.rank() }}<br>
+      {{ form.submit() }}
+      {{ form.hidden_tag() }}
+  </form>
+  <h1>PLAYERS</h1>
+  {% for player in players %}
+    <h4>{{ player.name }}</h4>
+    <h5>{{ player.team }}</h5>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>RANKINGS</h1>
+  {% if not players %}
+    <h5>PLEASE ADD A PLAYERS AND RANKING</h5>
+  {% endif %}
+  {% for player in players %}
+    <h4>{{ player.rank }}.<h4><p> {{ player.name }}</p>
+  {% endfor %}
+{% endblock %}

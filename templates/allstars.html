@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>ALL STARS</h1>
+  <h2> COACHES </h2>
+  {% for coach in coaches %}
+    <h4>{{ coach.name }}.<h4><h6> {{ coach.team_name }}</h6>
+  {% endfor %}
+  <h2> PLAYERS </h2>
+  {% for player in players %}
+    <h4>{{ player.name }}.<h4><h6> {{ player.position }}</h6>
+  {% endfor %}
+{% endblock %}
